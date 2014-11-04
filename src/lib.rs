@@ -45,7 +45,7 @@ impl<'a> PartialEq for Data<'a> {
             (&Bool(ref v0), &Bool(ref v1)) => v0 == v1,
             (&Vect(ref v0), &Vect(ref v1)) => v0 == v1,
             (&Map(ref v0), &Map(ref v1)) => v0 == v1,
-            (&Fun(_), &Fun(_)) => fail!("cannot compare closures"),
+            (&Fun(_), &Fun(_)) => panic!("cannot compare closures"),
             (_, _) => false,
         }
     }
